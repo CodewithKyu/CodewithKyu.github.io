@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    {% if page.title %}
+      {{ page.title }} | {{ site.title }}
+    {% else %}
+      {{ site.title }}
+    {% endif %}
+  </title>
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container">
+
+    <div class="site-title">
+      <a href="{{ '/' | relative_url }}">Abdul Quadir</a>
+    </div>
+
+    <nav class="navigation">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/research/' | relative_url }}">Research</a>
+      <a href="{{ '/publications/' | relative_url }}">Publications</a>
+      <a href="{{ '/education/' | relative_url }}">Education</a>
+      <a href="{{ '/awards/' | relative_url }}">Honours & Awards</a>
+      <a href="{{ '/links/' | relative_url }}">Links</a>
+      <a href="{{ '/reference/' | relative_url }}">References</a>
+      <a href="{{ '/cv/' | relative_url }}">CV</a>
+      <a href="{{ '/posts/' | relative_url }}">Posts</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="container">
+  {{ content }}
+</main>
+
+<footer>
+  <div class="container">
+    <p>© {{ "now" | date: "%Y" }} Abdul Quadir</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+title: Abdul Quadir
+description: Statistical Physics, Complex Systems and Nonlinear Dynamics
+
+url: "https://CodewithKyu.github.io"
+baseurl: ""
+
+markdown: kramdown
+permalink: /posts/:title/
+
+author:
+  name: Abdul Quadir
+  email: abdul.quadir@gtiit.edu.cn
