@@ -10,9 +10,9 @@ This repository contains the source files for my personal academic and research 
 ## About
 
 I am a Postdoctoral Research Fellow working in non-equilibrium statistical
-physics, complex systems, and applied mathematics. My research interests
+physics and  complex systems. My research interests
 include self-organized criticality, Abelian sandpile models, stochastic
-processes, nonlinear dynamics, and critical phenomena.
+processes, nonlinear dynamics, and critical phenomena. I am also learning number theory. 
 
 
 ---
