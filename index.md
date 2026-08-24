@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# Abdul Quadir
+# Abdul Quadir, PhD
 
 I am a Postdoctoral Research Fellow at **Guangdong Technion–Israel Institute of Technology**, working at the interface of non-equilibrium statistical physics, complex systems, and nonlinear dynamics. My current research focuses on the mathematical and computational study of sandpile models, together with stochastic processes, renormalization-group approaches, and emergent phenomena in driven non-equilibrium systems. 
 
