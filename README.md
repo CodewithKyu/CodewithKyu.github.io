@@ -16,5 +16,9 @@ processes, nonlinear dynamics, and critical phenomena.
 
 
 ---
+
+
 Built with [Jekyll](https://jekyllrb.com/) and hosted using
 [GitHub Pages](https://pages.github.com/).
+
+---
