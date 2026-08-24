@@ -4,7 +4,6 @@ title: Posts
 permalink: /posts/
 ---
 
-# Posts
 
 <div class="thinking-box terminal">
   <div class="prompt">$ research --status</div>
