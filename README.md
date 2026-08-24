@@ -1,13 +1,13 @@
 # Abdul Quadir — Academic Website
 
+
+https://CodewithKyu.github.io/   
+
 This repository contains the source files for my personal academic and research website.
 
-## 🌐 Website
-
-**[Visit my academic website →](https://CodewithKyu.github.io/)**
+---
 
 ## About
-
 
 I am a Postdoctoral Research Fellow working in non-equilibrium statistical
 physics, complex systems, and applied mathematics. My research interests
