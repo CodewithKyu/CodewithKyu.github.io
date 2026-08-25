@@ -4,7 +4,6 @@ title: Honours & Awards
 permalink: /awards/
 ---
 
-# Honours & Awards
 
 ## Fellowships & Scholarships
 

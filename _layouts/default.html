@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 
-<body>
+<body class="{{ page.body_class }}">
 
 <header class="site-header">
   <div class="container">
@@ -23,17 +23,63 @@
     <div class="site-title">
       <a href="{{ '/' | relative_url }}">Abdul Quadir</a>
     </div>
-
+    
     <nav class="navigation">
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/research/' | relative_url }}">Research</a>
-      <a href="{{ '/publications/' | relative_url }}">Publications</a>
-      <a href="{{ '/education/' | relative_url }}">Education</a>
-      <a href="{{ '/awards/' | relative_url }}">Honours & Awards</a>
-      <a href="{{ '/links/' | relative_url }}">Links</a>
-      <a href="{{ '/reference/' | relative_url }}">References</a>
-      <a href="{{ '/cv/' | relative_url }}">CV</a>
-      <a href="{{ '/posts/' | relative_url }}">Posts</a>
+
+      <a
+        href="{{ '/' | relative_url }}"
+        class="{% if page.url == '/' %}active{% endif %}">
+        Home
+      </a>
+
+      <a
+        href="{{ '/research/' | relative_url }}"
+        class="{% if page.url == '/research/' %}active{% endif %}">
+        Research & Education
+      </a>
+
+      <a
+        href="{{ '/publications/' | relative_url }}"
+        class="{% if page.url == '/publications/' %}active{% endif %}">
+        Publications
+      </a>
+      
+      <a
+        href="{{ '/coauthors/' | relative_url }}"
+        class="{% if page.url == '/coauthors/' %}active{% endif %}">
+        Research Co-authors
+      </a>
+
+      <a
+        href="{{ '/awards/' | relative_url }}"
+        class="{% if page.url == '/awards/' %}active{% endif %}">
+        Honours & Awards
+      </a>
+
+      <a
+        href="{{ '/links/' | relative_url }}"
+        class="{% if page.url == '/links/' %}active{% endif %}">
+        Links
+      </a>
+
+      <a
+        href="{{ '/cv/' | relative_url }}"
+        class="{% if page.url == '/cv/' %}active{% endif %}">
+        CV
+      </a>
+
+      <a
+        href="{{ '/activity/' | relative_url }}"
+        class="{% if page.url == '/activity/' %}active{% endif %}">
+        Activity
+      </a>
+
+      <a
+        href="{{ '/posts/' | relative_url }}"
+        class="{% if page.url == '/posts/' %}active{% endif %}">
+        Posts
+      </a>
+
     </nav>
 
   </div>

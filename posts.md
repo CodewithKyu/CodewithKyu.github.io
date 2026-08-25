@@ -4,71 +4,115 @@ title: Posts
 permalink: /posts/
 ---
 
+<div class="thinking-box">
 
-<div class="thinking-box terminal">
-  <div class="prompt">$ research --status</div>
+  <div class="thinking-header">
+    <span class="terminal-symbol">&gt;_</span>
+    <span class="thinking-title">Still Thinking</span>
+    <span class="thinking-dots">
+      <span>.</span><span>.</span><span>.</span>
+    </span>
+  </div>
 
-  <h2 class="thinking-title">
-    Still Thinking<span class="thinking-dots">...</span>
-  </h2>
+  <div class="thinking-tagline">
+    Somewhere between a conjecture and a segmentation fault.
+  </div>
 
-  <div id="live-datetime" class="live-datetime"></div>
+  <div class="thinking-time" id="thinking-clock"></div>
 
-  <p>Somewhere between a conjecture and a segmentation fault.</p>
 </div>
 
 
-<div class="posts-list">
+<div class="posts-section">
 
-{% for post in site.posts %}
+  <h2>Posts</h2>
 
-<article class="post-preview">
+  {% if site.posts.size > 0 %}
 
-  <div class="post-date">
-    {{ post.date | date: "%B %d, %Y" }}
-  </div>
+    {% for post in site.posts %}
 
-  <h2>
-    <a href="{{ post.url | relative_url }}">
-      {{ post.title }}
-    </a>
-  </h2>
+      <div class="post-item">
 
-  <div class="post-excerpt">
-    {{ post.excerpt }}
-  </div>
+        <span class="post-date">
+          {{ post.date | date: "%d %b %Y" }}
+        </span>
 
-  <a class="read-more" href="{{ post.url | relative_url }}">
-    Read more →
-  </a>
+        <a class="post-title" href="{{ post.url | relative_url }}">
+          {{ post.title }}
+        </a>
 
-</article>
+      </div>
 
-{% endfor %}
+    {% endfor %}
+
+  {% else %}
+
+    <div class="no-posts">
+      No notes have escaped the notebook yet.
+    </div>
+
+  {% endif %}
 
 </div>
 
 
 <script>
-function updateDateTime() {
+function updateThinkingClock() {
 
     const now = new Date();
 
-    const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-    };
+    const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
 
-    document.getElementById("live-datetime").textContent =
-        now.toLocaleString(undefined, options);
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
+
+    const ampm = hours >= 12 ? "PM" : "AM";
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    hours = String(hours).padStart(2, "0");
+
+    const date =
+        days[now.getDay()] + ", " +
+        String(now.getDate()).padStart(2, "0") + " " +
+        months[now.getMonth()] + " " +
+        now.getFullYear();
+
+    const time =
+        hours + ":" +
+        minutes + ":" +
+        seconds + " " +
+        ampm;
+
+    document.getElementById("thinking-clock").textContent =
+        "[" + date + ", " + time + "]";
 }
 
-updateDateTime();
-
-setInterval(updateDateTime, 1000);
+updateThinkingClock();
+setInterval(updateThinkingClock, 1000);
 </script>

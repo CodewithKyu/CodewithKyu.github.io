@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Home
+permalink: /
+body_class: home
 ---
 
 # Abdul Quadir, PhD

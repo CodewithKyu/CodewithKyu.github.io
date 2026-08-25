@@ -1,214 +1,885 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 Roboto, Helvetica, Arial, sans-serif;
+
+    font-family: Georgia, "Times New Roman", serif;
+
     color: #222;
     background: #ffffff;
-    line-height: 1.7;
+
+    line-height: 1.65;
+    font-size: 17px;
 }
 
 .container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 0 25px;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
+
+/* =========================================================
+   HEADER
+========================================================= */
+
 .site-header {
-    border-bottom: 1px solid #e5e5e5;
-    padding: 22px 0;
-    margin-bottom: 60px;
+    margin: 0;
+    padding: 0;
+
+    background:
+        linear-gradient(
+            100deg,
+            #eef7ff 0%,
+            #ffffff 42%,
+            #f5f8ff 100%
+        );
+
+    border-bottom: 1px solid #dce5f0;
 }
 
 .site-header .container {
+    min-height: 82px;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   SITE NAME
+========================================================= */
+
+.site-title {
+    white-space: nowrap;
 }
 
 .site-title a {
-    font-size: 23px;
-    font-weight: 600;
-    color: #111;
+    color: #123b7a;
+
     text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+}
+
+.site-title a:hover {
+    color: #175cc4;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 22px;
+
+    flex-wrap: nowrap;
 }
 
 .navigation a {
-    margin-left: 25px;
-    color: #555;
+    position: relative;
+
+    color: #17233b;
+
     text-decoration: none;
-    font-size: 15px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    padding: 29px 0 25px 0;
+
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
 }
 
 .navigation a:hover {
-    color: #000;
+    color: #165dcc;
 }
+
+
+/* underline */
+
+.navigation a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 3px;
+
+    background: #1769d2;
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.2s ease;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* active page */
+
+.navigation a.active {
+    color: #145fc4;
+    font-weight: 600;
+}
+
+.navigation a.active::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+main.container {
+    max-width: 1160px;
+
+    padding-top: 65px;
+    padding-bottom: 80px;
+
+    min-height: 72vh;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
 
 h1 {
-    font-size: 42px;
-    margin-bottom: 5px;
+    position: relative;
+
+    margin: 0 0 42px 0;
+
+    padding: 20px 30px 20px 48px;
+
+    color: #123b7a;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 48px;
+    line-height: 1.15;
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #edf5ff 0%,
+            #eaf4ff 50%,
+            #d8ebff 100%
+        );
+
+    border-radius: 15px;
 }
 
+
+/* blue vertical bar beside title */
+
+h1::before {
+    content: "";
+
+    position: absolute;
+
+    left: 20px;
+    top: 12px;
+    bottom: 12px;
+
+    width: 7px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        180deg,
+        #1467e8,
+        #4b83ed
+    );
+}
+
+
+/* =========================================================
+   SECONDARY HEADINGS
+========================================================= */
+
 h2 {
-    margin-top: 45px;
-    font-size: 27px;
+    margin-top: 42px;
+    margin-bottom: 16px;
+
+    color: #164b8b;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 29px;
+    font-weight: 700;
+
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid #d9e8fb;
 }
 
 h3 {
-    margin-top: 30px;
-    margin-bottom: 0px;
+    margin-top: 27px;
+    margin-bottom: 3px;
+
+    color: #244e7e;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 21px;
+    font-weight: 600;
 }
 
 h3 + p {
-    margin-top: 2px;
+    margin-top: 3px;
 }
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+p {
+    margin-top: 0;
+    margin-bottom: 22px;
+}
+
+strong {
+    color: #123b7a;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
 
 a {
-    color: #1769aa;
+    color: #1764c0;
 }
 
-main {
-    min-height: 70vh;
+main a {
+    color: #1764c0;
+    text-decoration: none;
+
+    border-bottom: 1px dotted #1764c0;
 }
 
-footer {
-    margin-top: 80px;
-    border-top: 1px solid #eee;
-    padding: 30px 0;
-    color: #777;
-    font-size: 14px;
+main a:hover {
+    color: #0d448c;
+
+    border-bottom-style: solid;
 }
 
-@media (max-width: 750px) {
-    .site-header .container {
-        display: block;
-    }
 
-    .navigation {
-        margin-top: 15px;
-    }
+/* =========================================================
+   HORIZONTAL RULE
+========================================================= */
 
-    .navigation a {
-        margin-left: 0;
-        margin-right: 15px;
-        display: inline-block;
-        margin-bottom: 8px;
-    }
+hr {
+    border: 0;
 
-    h1 {
-        font-size: 34px;
-    }
+    height: 3px;
+
+    margin: 30px 0 40px;
+
+    border-radius: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #155fd1 0%,
+        #4ba3ed 70%,
+        #83c5f5 100%
+    );
 }
+
+
+/* =========================================================
+   LISTS
+========================================================= */
+
+ul,
+ol {
+    padding-left: 29px;
+}
+
+li {
+    padding-left: 4px;
+    margin-bottom: 10px;
+}
+
+li::marker {
+    color: #1764c0;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   REFERENCE/AFFILIATION SMALL TEXT
+========================================================= */
 
 .affiliation-tag {
     font-size: calc(1em - 2px);
+
+    color: #66788c;
+
     font-weight: 400;
-    opacity: 0.65;
-    letter-spacing: 0.3px;
+
+    opacity: 0.9;
+
+    letter-spacing: 0.2px;
 }
 
 
-.thinking-box {
-    max-width: 720px;
-    margin: 90px auto;
-    padding: 55px 45px;
-    text-align: center;
-    border: 1px solid #e8e8e8;
-    border-radius: 18px;
-    background: linear-gradient(145deg, #ffffff, #f7f7f7);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+/* =========================================================
+   OPTIONAL HIGHLIGHT BOX
+========================================================= */
+
+.highlight-line {
+    display: block;
+
+    margin-top: 18px;
+    margin-bottom: 25px;
+
+    padding: 9px 15px;
+
+    background: linear-gradient(
+        90deg,
+        #e7faff,
+        #ecf7ff
+    );
+
+    border-left: 4px solid #1769d2;
+
+    border-radius: 7px;
 }
 
-.thinking-box h2 {
-    margin: 10px 0 12px;
-    font-size: 34px;
-    font-weight: 600;
-    letter-spacing: -0.5px;
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    border-top: 1px solid #e2e8ef;
+
+    background: #fbfdff;
+
+    padding: 28px 0;
+
+    color: #758192;
+
+    font-size: 14px;
 }
 
-.thinking-box p {
+footer p {
     margin: 0;
-    font-size: 18px;
-    font-style: italic;
-    color: #666;
 }
 
-.thinking-dots {
-    font-size: 28px;
-    letter-spacing: 8px;
-    color: #999;
-    margin-bottom: 10px;
-    animation: pulseDots 1.8s infinite ease-in-out;
+
+/* =========================================================
+   TEXT SELECTION
+========================================================= */
+
+::selection {
+    background: #d7eaff;
+    color: #123b7a;
 }
 
-@keyframes pulseDots {
-    0%, 100% {
-        opacity: 0.25;
-        transform: translateY(0);
+
+/* =========================================================
+   TABLES IF NEEDED
+========================================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+th,
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #dde5ee;
+}
+
+th {
+    color: #123b7a;
+    text-align: left;
+}
+
+
+/* =========================================================
+   CODE
+========================================================= */
+
+code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+    background: #f1f5f9;
+
+    padding: 2px 5px;
+
+    border-radius: 4px;
+
+    font-size: 0.9em;
+}
+
+pre {
+    background: #f6f8fa;
+
+    padding: 18px;
+
+    overflow-x: auto;
+
+    border: 1px solid #e1e7ed;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .site-header .container {
+        display: block;
+
+        padding-top: 18px;
+        padding-bottom: 12px;
     }
 
-    50% {
-        opacity: 1;
-        transform: translateY(-3px);
+    .site-title {
+        margin-bottom: 10px;
+    }
+
+    .navigation {
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+
+        gap: 5px 18px;
+    }
+
+    .navigation a {
+        padding: 8px 0;
+    }
+
+    .navigation a::after {
+        bottom: 0;
     }
 }
 
 
-.terminal .prompt {
-    font-family: "Courier New", monospace;
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 18px;
+@media (max-width: 700px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    main.container {
+        padding-top: 35px;
+    }
+
+    h1 {
+        font-size: 35px;
+
+        padding:
+            17px
+            18px
+            17px
+            38px;
+
+        border-radius: 11px;
+    }
+
+    h1::before {
+        left: 15px;
+        width: 5px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    .navigation {
+        gap: 3px 14px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
 }
 
-
-.live-datetime {
-    margin: 10px 0 18px;
-    font-family: "Courier New", monospace;
-    font-size: 14px;
-    color: #888;
-    letter-spacing: 0.3px;
+.coauthor-entry {
+    margin-bottom: 30px;
 }
 
-
-.posts-list {
-    margin-top: 60px;
-}
-
-.post-preview {
-    margin-bottom: 45px;
-    padding-bottom: 35px;
-    border-bottom: 1px solid #eeeeee;
-}
-
-.post-date {
-    font-size: 13px;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: 0.7px;
+.coauthor-entry h3 {
     margin-bottom: 5px;
 }
 
-.post-preview h2 {
-    margin-top: 5px;
-    margin-bottom: 10px;
+.coauthor-affiliations {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #64748b;
 }
 
-.post-preview h2 a {
-    color: #222;
-    text-decoration: none;
+/* =========================================================
+   STILL THINKING / POSTS
+========================================================= */
+
+.thinking-box {
+    margin: 5px 0 50px 0;
+    padding: 26px 30px 24px 30px;
+
+    background: #0f172a;
+    color: #dbeafe;
+
+    border: 1px solid #253555;
+    border-left: 5px solid #3b82f6;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.12);
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace;
 }
 
-.post-preview h2 a:hover {
-    color: #1769aa;
+
+/* Still Thinking heading */
+
+.thinking-header {
+    display: flex;
+    align-items: baseline;
+
+    font-size: 22px;
+    line-height: 1.4;
+
+    margin-bottom: 8px;
 }
 
-.post-excerpt {
-    color: #555;
-    margin-bottom: 10px;
+
+.terminal-symbol {
+    color: #60a5fa;
+
+    font-weight: 700;
+
+    margin-right: 12px;
 }
 
-.read-more {
+
+.thinking-title {
+    color: #f8fafc;
+
+    font-weight: 700;
+}
+
+
+/* animated dots */
+
+.thinking-dots {
+    margin-left: 2px;
+
+    color: #60a5fa;
+
+    font-weight: 700;
+}
+
+
+.thinking-dots span {
+    opacity: 0;
+
+    animation: thinking-dot 1.5s infinite;
+}
+
+
+.thinking-dots span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.thinking-dots span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.thinking-dots span:nth-child(3) {
+    animation-delay: 0.50s;
+}
+
+
+@keyframes thinking-dot {
+
+    0%,
+    20% {
+        opacity: 0;
+    }
+
+    40%,
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* tagline */
+
+.thinking-tagline {
+    color: #94a3b8;
+
     font-size: 14px;
+    font-style: italic;
+
+    margin-left: 42px;
+    margin-bottom: 15px;
+}
+
+
+/* live clock */
+
+.thinking-time {
+    color: #7dd3fc;
+
+    font-size: 13px;
+
+    margin-left: 42px;
+
+    letter-spacing: 0.15px;
+}
+
+
+/* =========================================================
+   POST LIST
+========================================================= */
+
+.posts-section {
+    margin-top: 15px;
+}
+
+
+.posts-section h2 {
+    color: #173f73;
+
+    font-size: 27px;
+
+    margin-bottom: 22px;
+}
+
+
+/* individual post */
+
+.post-item {
+    display: flex;
+    align-items: baseline;
+
+    padding: 13px 4px;
+
+    border-bottom: 1px solid #e4eaf1;
+
+    transition:
+        padding-left 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.post-item:hover {
+    padding-left: 10px;
+
+    background: #f8fbff;
+}
+
+
+/* date */
+
+.post-date {
+    width: 125px;
+    flex-shrink: 0;
+
+    color: #64748b;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        monospace;
+
+    font-size: 13px;
+}
+
+
+/* title */
+
+main .post-title {
+    color: #174f92;
+
+    border-bottom: none;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 17px;
+    font-weight: 600;
+
     text-decoration: none;
 }
 
+
+main .post-title:hover {
+    color: #1769d2;
+
+    border-bottom: none;
+}
+
+
+/* empty posts */
+
+.no-posts {
+    padding: 18px 0;
+
+    color: #7b8797;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   POSTS MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .thinking-box {
+        padding: 21px 20px;
+    }
+
+    .thinking-tagline,
+    .thinking-time {
+        margin-left: 0;
+    }
+
+    .thinking-tagline {
+        margin-top: 12px;
+    }
+
+    .post-item {
+        display: block;
+    }
+
+    .post-date {
+        display: block;
+
+        width: auto;
+
+        margin-bottom: 3px;
+    }
+}
+
+/* =========================================================
+   SCIENTIFIC BACKGROUND
+========================================================= */
+
+body {
+    position: relative;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    top: 82px;
+    left: 0;
+
+    width: 100%;
+    height: calc(100vh - 82px);
+
+    background-image: url("/assets/images/complex-systems-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0.075;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =========================================================
+   SCIENTIFIC ARTWORK — HOMEPAGE ONLY
+========================================================= */
+
+body.home::before {
+    content: "";
+
+    position: fixed;
+    top: 110px;
+    left: 50%;
+
+    width: 1200px;
+    height: 1100px;
+
+    transform: translateX(-50%);
+
+    background-image: url("/assets/images/complex-systems-bg.png");
+
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    opacity: 0.26;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+body.home main.container {
+    background: transparent;
+}
