@@ -24,7 +24,7 @@ DOI: [https://doi.org/10.1140/epjb/s10051-024-00794-1](https://doi.org/10.1140/e
 ### Extreme events scaling in self-organized critical models
 
 **A. Quadir** and H. H. Jafri, *Journal of Statistical Mechanics: Theory and Experiment* (2026), 043202  
-DOI: [10.1088/1742-5468/ae5a17](10.1088/1742-5468/ae5a17)
+DOI: [10.1088/1742-5468/ae5a17](https://iopscience.iop.org/article/10.1088/1742-5468/ae5a17)
 
 ---
 

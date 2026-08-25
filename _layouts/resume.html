@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ page.title }}</title>
+
+<style>
+
+/* =====================================================
+   GLOBAL
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e8e8e8;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11.2pt;
+    line-height: 1.32;
+
+    color: #252525;
+}
+
+
+/* =====================================================
+   TOOLBAR
+   ===================================================== */
+
+.cv-toolbar {
+    width: 210mm;
+
+    margin: 18px auto 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cv-toolbar a {
+    color: #17689a;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cv-toolbar button {
+    border: none;
+
+    background: #17689a;
+    color: white;
+
+    padding: 8px 15px;
+
+    border-radius: 3px;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.cv-toolbar button:hover {
+    background: #0f527d;
+}
+
+
+/* =====================================================
+   A4
+   ===================================================== */
+
+.cv-page {
+    width: 210mm;
+    min-height: 297mm;
+
+    margin: 0 auto 30px;
+
+    background: #ffffff;
+
+    padding: 15mm 16mm 15mm 16mm;
+
+    box-shadow:
+        0 2px 5px rgba(0,0,0,.18),
+        0 10px 30px rgba(0,0,0,.08);
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.cv-header {
+    margin-left: 41mm;
+    margin-bottom: 16px;
+}
+
+.cv-name {
+    margin: 0 0 9px 0;
+
+    font-size: 27px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #222;
+}
+
+.cv-personal {
+    font-size: 10.3pt;
+    line-height: 1.5;
+}
+
+.cv-personal strong {
+    font-weight: 700;
+}
+
+.cv-personal a {
+    color: #17689a;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   EUROPEAN / EUROPASS STYLE SECTION
+   ===================================================== */
+
+.cv-section {
+    display: grid;
+
+    grid-template-columns: 38mm 1fr;
+
+    column-gap: 6mm;
+
+    margin-top: 11px;
+}
+
+
+/* LEFT SIDE */
+
+.cv-label {
+    color: #17689a;
+
+    font-size: 10.8pt;
+    line-height: 1.2;
+
+    text-align: right;
+
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    padding-top: 1px;
+}
+
+
+/* RIGHT SIDE */
+
+.cv-content {
+    min-width: 0;
+
+    padding-bottom: 7px;
+}
+
+
+/* subtle line separating sections */
+
+.cv-section + .cv-section .cv-content {
+    border-top: 1px solid #d6d6d6;
+
+    padding-top: 10px;
+}
+
+.cv-section + .cv-section .cv-label {
+    padding-top: 11px;
+}
+
+
+/* =====================================================
+   TEXT
+   ===================================================== */
+
+.cv-content p {
+    margin: 0 0 6px 0;
+}
+
+.cv-content ul {
+    margin: 4px 0 7px 18px;
+
+    padding: 0;
+}
+
+.cv-content li {
+    margin: 1px 0 3px 0;
+}
+
+
+/* =====================================================
+   ENTRIES
+   ===================================================== */
+
+.entry {
+    margin-bottom: 13px;
+
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.entry:last-child {
+    margin-bottom: 0;
+}
+
+.date-line {
+    color: #17689a;
+
+    font-weight: 600;
+
+    font-size: 10.5pt;
+
+    margin-bottom: 2px;
+}
+
+.entry-title {
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin-bottom: 2px;
+}
+
+.entry-title.normal {
+    text-transform: none;
+}
+
+.institution {
+    font-weight: 500;
+}
+
+.meta {
+    margin-top: 3px;
+
+    font-size: 10.3pt;
+}
+
+.meta strong {
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   LINKS
+   ===================================================== */
+
+.cv-content a {
+    color: #17689a;
+
+    text-decoration: none;
+}
+
+.cv-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   PROJECT/PUBLICATION YEAR
+   ===================================================== */
+
+.year {
+    color: #17689a;
+
+    font-weight: 600;
+
+    margin-bottom: 1px;
+}
+
+
+/* =====================================================
+   PUBLICATIONS
+   ===================================================== */
+
+.publication {
+    margin-bottom: 12px;
+
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.pub-title {
+    font-weight: 600;
+
+    margin-bottom: 1px;
+}
+
+.pub-citation {
+    margin-bottom: 2px;
+}
+
+.pub-info {
+    font-size: 9.5pt;
+
+    line-height: 1.3;
+
+    color: #505050;
+}
+
+
+/* =====================================================
+   LANGUAGE TABLE
+   ===================================================== */
+
+.languages {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    font-size: 9.5pt;
+
+    margin-top: 6px;
+}
+
+.languages th {
+    font-weight: 600;
+
+    border-bottom: 1px solid #999;
+
+    padding: 4px 3px;
+
+    text-align: center;
+}
+
+.languages td {
+    padding: 4px 3px;
+
+    text-align: center;
+}
+
+.languages th:first-child,
+.languages td:first-child {
+    text-align: left;
+}
+
+
+/* =====================================================
+   REFERENCES
+   ===================================================== */
+
+.reference {
+    margin-bottom: 12px;
+
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.ref-name {
+    font-weight: 700;
+}
+
+.ref-role {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 0.92em;
+    margin-left: 4px;
+}
+
+
+/* =====================================================
+   PRINT
+   ===================================================== */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    html,
+    body {
+        background: white;
+    }
+
+    .cv-toolbar {
+        display: none !important;
+    }
+
+    .cv-page {
+        width: 210mm;
+
+        margin: 0;
+
+        padding: 15mm 16mm;
+
+        box-shadow: none;
+    }
+
+    .cv-section {
+        page-break-inside: auto;
+    }
+
+    .entry,
+    .publication,
+    .reference {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media screen and (max-width: 850px) {
+
+    body {
+        background: white;
+    }
+
+    .cv-toolbar {
+        width: auto;
+
+        margin: 12px 18px;
+    }
+
+    .cv-page {
+        width: 100%;
+        min-height: 0;
+
+        margin: 0;
+
+        padding: 25px 20px;
+
+        box-shadow: none;
+    }
+
+    .cv-header {
+        margin-left: 0;
+    }
+
+    .cv-section {
+        display: block;
+    }
+
+    .cv-label {
+        text-align: left;
+
+        margin-top: 16px;
+        margin-bottom: 7px;
+
+        padding-bottom: 3px;
+
+        border-bottom: 1px solid #17689a;
+    }
+
+    .cv-section + .cv-section .cv-content {
+        border-top: none;
+
+        padding-top: 0;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="cv-toolbar">
+
+    <a href="{{ '/cv/' | relative_url }}">
+        ← Back to CV
+    </a>
+
+    <button onclick="window.print()">
+        Print / Save as PDF
+    </button>
+
+</div>
+
+
+<main class="cv-page">
+
+    {{ content }}
+
+</main>
+
+
+</body>
+</html>

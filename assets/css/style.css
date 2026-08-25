@@ -883,3 +883,369 @@ body.home::before {
 body.home main.container {
     background: transparent;
 }
+
+:root {
+    --blue: #005a9c;
+    --dark-blue: #004b80;
+    --text: #222;
+    --muted: #555;
+    --line: #d8d8d8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #ededed;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+
+    font-size: 12.5px;
+    line-height: 1.35;
+}
+
+
+/* =========================
+   TOOLBAR
+   ========================= */
+
+.cv-toolbar {
+    width: 210mm;
+    margin: 18px auto 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cv-toolbar a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.cv-toolbar button {
+    background: var(--blue);
+    border: 0;
+    color: white;
+
+    padding: 8px 14px;
+    border-radius: 3px;
+
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.cv-toolbar button:hover {
+    background: var(--dark-blue);
+}
+
+
+/* =========================
+   A4 PAGE
+   ========================= */
+
+.cv-sheet {
+    width: 210mm;
+    min-height: 297mm;
+
+    margin: 0 auto 35px;
+
+    padding: 15mm 17mm 15mm 17mm;
+
+    background: white;
+
+    box-shadow: 0 2px 12px rgba(0,0,0,0.14);
+}
+
+
+/* =========================
+   NAME / HEADER
+   ========================= */
+
+.cv-sheet h1 {
+    margin: 0 0 7px 0;
+
+    font-size: 27px;
+    font-weight: 600;
+
+    color: #222;
+}
+
+.personal-line {
+    font-size: 11.5px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+}
+
+.personal-line strong {
+    font-weight: 600;
+}
+
+
+/* =========================
+   SECTION HEADINGS
+   ========================= */
+
+.cv-section-title {
+    margin-top: 16px;
+    margin-bottom: 7px;
+
+    color: var(--blue);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+
+    border-bottom: 1px solid var(--blue);
+
+    padding-bottom: 2px;
+}
+
+
+/* =========================
+   ABOUT / PARAGRAPHS
+   ========================= */
+
+.cv-text {
+    margin: 0 0 8px 0;
+    text-align: justify;
+}
+
+
+/* =========================
+   DATE ENTRY
+   ========================= */
+
+.cv-entry {
+    margin: 9px 0 13px 0;
+}
+
+.cv-date {
+    color: var(--blue);
+    font-weight: 700;
+
+    font-size: 11.5px;
+
+    margin-bottom: 2px;
+}
+
+.cv-entry-title {
+    font-weight: 700;
+    font-size: 12.7px;
+
+    text-transform: uppercase;
+}
+
+.cv-entry-title.normal {
+    text-transform: none;
+}
+
+.cv-place {
+    font-weight: 600;
+}
+
+.cv-meta {
+    margin-top: 3px;
+    font-size: 11.5px;
+}
+
+.cv-meta strong {
+    font-weight: 600;
+}
+
+
+/* =========================
+   BULLETS
+   ========================= */
+
+.cv-sheet ul {
+    margin: 5px 0 7px 18px;
+    padding: 0;
+}
+
+.cv-sheet li {
+    margin: 2px 0;
+}
+
+
+/* =========================
+   PUBLICATIONS
+   ========================= */
+
+.publication {
+    margin: 8px 0 13px 0;
+}
+
+.pub-year {
+    color: var(--blue);
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.pub-title {
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.pub-main {
+    margin-bottom: 3px;
+}
+
+.pub-details {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   LINKS
+   ========================= */
+
+.cv-sheet a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.cv-sheet a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   REFERENCES
+   ========================= */
+
+.reference {
+    margin-bottom: 14px;
+}
+
+.reference-name {
+    font-weight: 700;
+}
+
+.reference-role {
+    font-weight: 600;
+}
+
+
+/* =========================
+   LANGUAGES
+   ========================= */
+
+.language-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    font-size: 11.5px;
+    margin-top: 5px;
+}
+
+.language-table th,
+.language-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 7px;
+    text-align: center;
+}
+
+.language-table th:first-child,
+.language-table td:first-child {
+    text-align: left;
+}
+
+
+/* =========================
+   PAGE BREAK CONTROL
+   ========================= */
+
+.cv-entry,
+.publication,
+.reference {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 850px) {
+
+    body {
+        background: white;
+    }
+
+    .cv-toolbar {
+        width: auto;
+        margin: 12px 18px;
+    }
+
+    .cv-sheet {
+        width: 100%;
+        min-height: 0;
+
+        margin: 0;
+
+        padding: 25px 20px;
+
+        box-shadow: none;
+    }
+}
+
+
+/* =========================
+   PRINT
+   ========================= */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    html,
+    body {
+        background: white;
+    }
+
+    .cv-toolbar {
+        display: none;
+    }
+
+    .cv-sheet {
+        width: 210mm;
+        min-height: 297mm;
+
+        padding: 15mm 17mm;
+
+        margin: 0;
+
+        box-shadow: none;
+    }
+
+    a {
+        color: var(--blue) !important;
+        text-decoration: none !important;
+    }
+}
+
+.pub-doi {
+    margin-top: 2px;
+    font-size: 0.92em;
+}
+
+.pub-doi a {
+    color: #17689a;
+    text-decoration: none;
+}
+
+.pub-doi a:hover {
+    text-decoration: underline;
+}
